@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest labelsnap --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack)",
+      "Bash(rm -rf labelsnap)",
+      "Bash(yes no:*)",
+      "Bash(npm install:*)",
+      "Bash(cd:*)",
+      "Bash(npx next:*)",
+      "Bash(shopt -s dotglob)",
+      "Bash(cp -r labelsnap/* .)",
+      "Bash(cp labelsnap/.env.local.example .)",
+      "Bash(cp labelsnap/.gitignore .)",
+      "Bash(rm -rf labelsnap/.git)",
+      "Bash(rm -rf node_modules .next)",
+      "Bash(cp labelsnap/package.json labelsnap/package-lock.json labelsnap/tsconfig.json labelsnap/next.config.ts labelsnap/next-env.d.ts labelsnap/eslint.config.mjs labelsnap/postcss.config.mjs labelsnap/README.md .)",
+      "Bash(cp -r labelsnap/src .)",
+      "Bash(cp -r labelsnap/supabase .)",
+      "Bash(cp -r labelsnap/public .)"
+    ]
+  }
+}

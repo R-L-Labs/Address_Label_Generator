@@ -1,7 +1,6 @@
 import LabelTool from "@/components/label-tool/LabelTool";
 import Hero from "@/components/landing/Hero";
 import Features from "@/components/landing/Features";
-import Pricing from "@/components/landing/Pricing";
 import Footer from "@/components/landing/Footer";
 
 export default function Home() {
@@ -16,12 +15,6 @@ export default function Home() {
               className="hover:text-foreground transition-colors"
             >
               Features
-            </a>
-            <a
-              href="#pricing"
-              className="hover:text-foreground transition-colors"
-            >
-              Pricing
             </a>
           </nav>
         </div>
@@ -39,10 +32,6 @@ export default function Home() {
 
         <div id="features">
           <Features />
-        </div>
-
-        <div id="pricing">
-          <Pricing />
         </div>
       </main>
 

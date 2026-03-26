@@ -35,17 +35,18 @@ export default function DownloadButton({
 
     if (orientation === "horizontal") {
       // Horizontal: text rotated 90° CCW — reads landscape on portrait label
-      // With angle:90, text reads bottom-to-top. X controls vertical position
-      // on the page, Y controls horizontal position. Lines stack downward via X.
       if (returnAddress.trim()) {
         doc.setFont("helvetica", "normal");
         doc.setFontSize(9);
         const returnLines = returnAddress.split("\n");
         const lineH = 0.17;
         returnLines.forEach((line, i) => {
-          doc.text(line, LABEL_PADDING + 0.12 + i * lineH, pageH - LABEL_PADDING, {
-            angle: 90,
-          });
+          doc.text(
+            line,
+            LABEL_PADDING + 0.12 + i * lineH,
+            pageH - LABEL_PADDING,
+            { angle: 90 }
+          );
         });
       }
 
@@ -56,11 +57,9 @@ export default function DownloadButton({
         const lineH = 0.25;
         const blockH = recipientLines.length * lineH;
         const startX = pageW / 2 - blockH / 2;
-        // Center horizontally on the page (Y axis when rotated)
         const centerY = pageH / 2;
 
         recipientLines.forEach((line, i) => {
-          // Measure text width to center it along the rotated axis
           const textW = doc.getTextWidth(line);
           doc.text(line, startX + i * lineH, centerY + textW / 2, {
             angle: 90,

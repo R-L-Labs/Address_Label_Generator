@@ -5,9 +5,9 @@ export default function Hero() {
         Paste an address. Print a label.
       </h1>
       <p className="mt-4 text-lg text-muted max-w-2xl mx-auto">
-        The fastest way to print shipping labels for TCGPlayer, eBay, and
-        Mercari orders. No sign-up required. No expensive software. Just paste
-        and print.
+        Stop handwriting addresses on your PWE orders. Generate clean, printed
+        labels for your TCGPlayer, eBay, and Mercari stamp-and-envelope
+        shipments in seconds. Just paste the address, download, and print.
       </p>
     </section>
   );

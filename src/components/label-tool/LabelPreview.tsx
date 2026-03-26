@@ -108,7 +108,7 @@ export default function LabelPreview({
         </div>
       </div>
       <p className="text-xs text-muted">
-        {labelSize.width}&quot; x {labelSize.height}&quot; &mdash; {orientation} layout
+        {labelSize.name} &mdash; {orientation} layout
       </p>
     </div>
   );

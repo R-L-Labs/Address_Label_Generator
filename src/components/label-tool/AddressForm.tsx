@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
 interface AddressFormProps {
   returnAddress: string;
   recipientAddress: string;
@@ -9,34 +7,12 @@ interface AddressFormProps {
   onRecipientAddressChange: (value: string) => void;
 }
 
-const RETURN_ADDRESS_KEY = "labelsnap_return_address";
-
 export default function AddressForm({
   returnAddress,
   recipientAddress,
   onReturnAddressChange,
   onRecipientAddressChange,
 }: AddressFormProps) {
-  const initialized = useRef(false);
-
-  // Load return address from localStorage on mount
-  useEffect(() => {
-    if (!initialized.current) {
-      initialized.current = true;
-      const saved = localStorage.getItem(RETURN_ADDRESS_KEY);
-      if (saved) {
-        onReturnAddressChange(saved);
-      }
-    }
-  }, [onReturnAddressChange]);
-
-  // Persist return address to localStorage on change
-  useEffect(() => {
-    if (initialized.current) {
-      localStorage.setItem(RETURN_ADDRESS_KEY, returnAddress);
-    }
-  }, [returnAddress]);
-
   function handleSwap() {
     const temp = returnAddress;
     onReturnAddressChange(recipientAddress);
@@ -60,15 +36,12 @@ export default function AddressForm({
           rows={3}
           className="w-full rounded-lg border border-border bg-white px-3 py-2 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent/40 resize-none"
         />
-        <p className="text-xs text-muted mt-1">
-          Saved automatically for next time
-        </p>
       </div>
 
       <button
         type="button"
         onClick={handleSwap}
-        className="flex items-center gap-1.5 text-sm text-muted hover:text-foreground transition-colors mx-auto"
+        className="flex items-center gap-1.5 text-sm text-muted hover:text-foreground transition-colors mx-auto cursor-pointer"
       >
         <svg
           width="16"

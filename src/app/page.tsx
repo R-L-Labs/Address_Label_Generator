@@ -2,6 +2,7 @@ import LabelTool from "@/components/label-tool/LabelTool";
 import Hero from "@/components/landing/Hero";
 import Features from "@/components/landing/Features";
 import Footer from "@/components/landing/Footer";
+import AdUnit from "@/components/AdUnit";
 
 export default function Home() {
   return (
@@ -27,6 +28,12 @@ export default function Home() {
         <section className="pb-16 px-4">
           <div className="max-w-5xl mx-auto">
             <LabelTool />
+          </div>
+        </section>
+
+        <section className="py-8 px-4">
+          <div className="max-w-5xl mx-auto">
+            <AdUnit slot="YOUR_AD_SLOT_ID" format="horizontal" />
           </div>
         </section>
 
